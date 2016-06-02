@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class RevNum {
+
+	public static void main(String[] args) {
+		
+		int input = 0;
+	      int reverse = 0;
+	      System.out.println("Input your number and press enter: ");
+	      //We store the integer here
+	      Scanner in = new Scanner(System.in);
+	      //Captured input would be stored in number num
+	      input = in.nextInt();
+	      //Use a While Loop to find the reverse of the number
+	      while( input != 0 )
+	      {
+	          reverse = reverse * 10;
+	          reverse = reverse + input%10;
+	          input = input/10;
+	      }
+	      //Print
+	      System.out.println("Reverse of input number is: "+reverse);
+	}
+}

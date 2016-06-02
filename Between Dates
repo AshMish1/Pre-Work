@@ -1,0 +1,38 @@
+import java.util.Scanner; 
+import java.time.LocalDate; 
+import java.time.Period;  
+
+public class BetweenDates {
+
+    public static void main(String[] args) {
+
+        System.out.println("Difference Between Two Dates");
+
+        // Ask for an input
+        System.out.print("Please enter the older date in YYYY-MM-DD format: ");
+
+        // Create a Scanner object
+        Scanner scanner = new Scanner(System.in);
+        
+        String olderDate = scanner.nextLine();
+        // Changed date format to string using parse
+        LocalDate oldDate = LocalDate.parse(olderDate);
+
+        System.out.println("You have entered " + oldDate + " for your oldest date.");
+        System.out.print("Please enter the more recent date in YYYY-MM-DD format: ");
+        //Creating scanner object for second date
+        String newerDate = scanner.nextLine();
+        LocalDate newDate = LocalDate.parse(newerDate);
+        System.out.println("You have entered " + newDate + " for your most recent date.");
+
+        Period difference = oldDate.until(newDate);
+
+        int days = difference.getDays();
+        int months = difference.getMonths();
+        int years = difference.getYears();
+        scanner.close();
+
+        System.out.println("Your time difference is: " + months + " Months, " + days + " Days, and " + years + " Years.");
+    }
+}
+
